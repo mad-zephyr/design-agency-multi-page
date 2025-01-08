@@ -6,6 +6,7 @@ FROM nginx:alpine
 # RUN chmod +x /usr/local/bin/healthcheck.frontend.sh
 # ENTRYPOINT ["/usr/local/bin/healthcheck.frontend.sh"]
 
-EXPOSE 80 443
+EXPOSE 80 
+# 443
 
 CMD [ "nginx", "-g", "daemon off;" ]

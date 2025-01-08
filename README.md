@@ -41,5 +41,5 @@ npm run strapi import -- -f name_import_file.tar
 ## Certbot 🤖
 #### Obtaining ssl certificate
 ```
-docker-compose -f production.compose.yml run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d [domain-name]
+docker compose -f production.compose.yml run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d [domain-name]
 ```
