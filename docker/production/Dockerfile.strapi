@@ -1,23 +1,46 @@
-FROM node:20-alpine
+# FROM node:20-alpine
 
-RUN apk update && apk add --no-cache yarn
+# RUN apk update && apk add --no-cache yarn
+
+# ARG API_CLIENT_URL
+
+# WORKDIR /strapi
+
+# RUN yarn global add pm2
+
+# COPY package.json yarn.lock ./
+
+# RUN yarn install --production
+
+# COPY . ./
+
+# ENV API_CLIENT_URL=${API_CLIENT_URL}
+
+# RUN yarn build
+
+# EXPOSE 1337
+
+# CMD ["pm2-runtime", "start", "yarn start", "--name", "api"]
+
+
+FROM node:20-alpine
 
 ARG API_CLIENT_URL
 
 WORKDIR /strapi
 
-RUN yarn global add pm2
+RUN npm install pm2 -g
 
-COPY package.json yarn.lock ./
+COPY package*.json ./
 
-RUN yarn install --production
+RUN npm ci --omit=dev
 
 COPY . ./
 
 ENV API_CLIENT_URL=${API_CLIENT_URL}
 
-RUN yarn build
+RUN npm run build
 
 EXPOSE 1337
 
-CMD ["pm2-runtime", "start", "yarn start", "--name", "api"]
+CMD [ "pm2-runtime", "npm", "--", "start"]
