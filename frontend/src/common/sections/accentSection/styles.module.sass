@@ -1,0 +1,101 @@
+$columns: 12
+$template: ""
+
+@for $i from 1 through $columns
+    @if $i == 1
+        // Для первой колонки
+        $template: "#{$template} [col-start-#{$i}] 1fr [col-end-#{$i} col-start-#{$i+1}]"
+    @else if $i > 1 & $i < $columns
+        // Для промежуточных колонок
+        $template: "#{$template} 1fr [col-end-#{$i} col-start-#{$i+1}]"
+    @else
+        // Для последней колонки
+        $template: "#{$template} 1fr [col-end-#{$i}]"
+
+.main
+    display: grid
+    grid-template-columns: repeat($columns, 1fr )
+    width: 100%
+    min-height: 480px
+    border-radius: 1rem
+    overflow: hidden
+    background: var(--color-accent)
+
+    & > div
+        &:nth-of-type(1)
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            grid-column: 1 / span 7
+            grid-row: 1 / span 1
+            background: var(--color-accent)
+            padding: 0 96px
+
+            &::after
+                content: ""
+                position: absolute
+                aspect-ratio: 1
+                border-radius: 100%
+                opacity: 0.3
+                bottom: 0
+                left: 0
+                width: 100%
+                height: auto
+                background: linear-gradient(90deg, rgba(93, 2, 2, 0) 0%, rgba(93, 2, 2, 0.5) 100%)
+
+        &:nth-of-type(2)
+            position: relative
+            grid-column: 8 / span 5
+            grid-row: 1 / span 1
+            height: 100%
+
+.content
+    position: relative
+    display: flex
+    flex-direction: column
+    row-gap: 2rem
+    z-index: 2
+
+    h1,h2,h3,h4,h5,h6,p
+        color: white
+
+@media only screen and (max-width: 960px)
+    .main
+        border-radius: 1rem
+        grid-template-rows: minmax(320px, 400px) auto
+
+        & > div
+            &:nth-of-type(1)
+                grid-column: 1 / span 12
+                grid-row: 3 / span 1
+                padding: 0
+
+                padding: 5rem 24px
+
+                &::after
+                    aspect-ratio: 1
+                    top: -50%
+                    width: 80%
+                    right: 0
+                    bottom: unset
+                    left: unset
+
+            &:nth-of-type(2)
+                position: relative
+                grid-column: 1 / span 12
+                grid-row: 1 / span 2
+
+                img
+                    object-fit: cover
+
+    .content
+        h1,h2,h3,h4,h5,h6,p
+            text-align: center
+
+        h1
+            font-size: 32px
+
+@media only screen and (max-width: 480px)
+    .main
+        border-radius: 0rem

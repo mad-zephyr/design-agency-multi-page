@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_cards_common_cards",
+  "info": {
+    "displayName": "commonCard",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "feature",
+        "preview",
+        "service"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

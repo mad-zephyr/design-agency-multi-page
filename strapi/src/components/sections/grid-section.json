@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_grid_sections",
+  "info": {
+    "displayName": "GridSection",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.common-card"
+    }
+  }
+}

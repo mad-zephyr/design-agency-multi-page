@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_adress_map_sections",
+  "info": {
+    "displayName": "AdressMapSection",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contacts": {
+      "displayName": "ContactWithLocation",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contact-with-location"
+    }
+  }
+}

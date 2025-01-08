@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_form_checkboxes",
+  "info": {
+    "displayName": "Checkbox",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "field_id": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "type": "integer",
+      "required": true,
+      "default": 100,
+      "min": 25,
+      "max": 100
+    },
+    "default_checked": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "validation_rules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.validation"
+    }
+  }
+}

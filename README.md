@@ -12,7 +12,7 @@ Next.js, Strapi, PostgreSQL, Nginx, Docker.
 
 #### Running containers for development
 ```
-docker-compose -f development.compose.yml up --build
+docker-compose -p designo_docker --env-file .env.development -f development.compose.yml up --build
 ```
 
 #### Running containers for production

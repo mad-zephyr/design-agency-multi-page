@@ -1,0 +1,125 @@
+.header
+    position: relative
+    display: flex
+    height: 158px
+    margin: 0 auto
+
+.wrapper
+    position: fixed
+    display: grid
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    grid-template-columns: 1px repeat(2, auto) 1px
+    grid-template-rows: 64px repeat(2, auto) 64px auto
+    max-width: 1111px
+    width: 100%
+    z-index: 3
+    margin: 0 auto
+    transition: 0.3s all ease-in-out
+    background: rgba(#fff, 0)
+    backdrop-filter: blur(0px)
+    align-items: center
+    transition: all 0.3s ease-in-out
+
+.logo
+    grid-column: 2 / span 2
+    grid-row: 2 / span 1
+    display: flex
+    align-items: center
+    padding-left: 0px
+    transition: 0.2s padding ease-in-out
+
+.nav
+    grid-column: 3 / span 1
+    grid-row: 2 / span 1
+    justify-self: end
+    padding-right: 3rem
+    transition: 0.2s padding ease-in-out
+
+    ul
+        display: flex
+        align-items: center
+        column-gap: 2.62rem
+
+        li
+            display: flex
+            align-items: center
+            list-style: none
+            color: var(--color-dark-grey)
+
+.lang
+    grid-column: 3 / span 1
+    grid-row: 2 / span 1
+    justify-self: end
+    padding-right: 0px
+    transition: 0.2s padding ease-in-out
+
+.minimized
+    grid-template-rows: 16px repeat(2, auto) 16px auto
+    grid-template-columns: 24px repeat(2, auto) 24px
+    transition: all 0.3s ease-in-out
+    background: rgba(white,0.3)
+    backdrop-filter: blur(14px)
+
+    .nav
+        // grid-column: 3 / span 1
+        padding-right: 3rem
+
+.menu
+    display: none
+
+.open
+    background: white
+
+@media screen and (max-width: 960px)
+    .header
+        background: rgba(#fff, 0)
+
+    .wrapper
+        display: grid
+        grid-template-columns: 24px repeat(2, auto) 24px
+        grid-template-rows: 16px repeat(2, auto) 16px auto
+
+    .logo
+        grid-column: 2 / span 1
+
+    .nav
+        display: none
+
+    .lang
+        display: inline-flex
+        grid-column: 3 / span 1
+        grid-row: 2 / span 1
+        justify-self: flex-end
+        gap: 0.5rem
+
+    .menu
+        display: block
+        grid-column: 1 / span 4
+        grid-row: 5 / span 1
+
+@media screen and (max-width: 480px)
+    .header
+        height: 96px
+        display: flex
+        align-items: center
+        background: rgba(#fff, 0)
+
+    .logo
+        grid-column: 1 / span 2
+        height: min-content
+        padding-left: 24px
+
+    .wrapper
+        grid-template-rows: 30px repeat(2, auto) 30px auto
+        background: rgba(#fff, 1)
+
+    .minimized
+        grid-template-rows: 12px repeat(2, auto) 12px auto
+
+        .logo
+            padding-left: 24px
+
+        .lang
+            padding-right: 0px

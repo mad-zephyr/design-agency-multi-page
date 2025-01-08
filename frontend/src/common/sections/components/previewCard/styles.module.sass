@@ -1,0 +1,59 @@
+
+.main
+    display: flex
+    flex-direction: column
+    border-radius: 1rem
+    overflow: hidden
+    width: 100%
+    justify-content: center
+    align-items: center
+    cursor: pointer
+
+    background: var(--color-accent-light)
+
+.title
+    color: var(--color-accent)
+
+.content
+    display: flex
+    flex-direction: column
+    row-gap: 1rem
+    padding: 2rem
+    height: 100%
+    background: var(--color-accent-light)
+    justify-content: center
+
+    & > *
+        text-align: center
+
+.card
+    position: relative
+    aspect-ratio: 320 / 350
+    width: 100%
+    height: auto
+    background: var(--color-accent)
+
+    img
+        object-fit: cover
+
+@media only screen and (max-width: 960px)
+    .main
+        flex-direction: row
+
+    .content
+        width: 50%
+
+    .card
+        width: 50%
+
+@media screen and (max-width: 480px)
+    .main
+        flex-direction: column
+
+    .content
+        width: 100%
+
+    .card
+        position: relative
+        aspect-ratio: 327 / 320
+        width: 100%

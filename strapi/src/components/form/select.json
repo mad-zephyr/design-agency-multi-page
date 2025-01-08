@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_form_selects",
+  "info": {
+    "displayName": "Select",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "field_id": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer",
+      "min": 25,
+      "max": 100,
+      "required": true,
+      "default": 100
+    },
+    "options": {
+      "displayName": "option",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.option",
+      "min": 1,
+      "required": true
+    },
+    "validation_rules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.validation",
+      "required": false
+    }
+  }
+}

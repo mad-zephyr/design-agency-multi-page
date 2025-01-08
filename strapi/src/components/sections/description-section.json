@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_description_sections",
+  "info": {
+    "displayName": "DescriptionSection",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "imagePlacement": {
+      "type": "enumeration",
+      "enum": [
+        "right",
+        "left"
+      ],
+      "default": "right",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "accent",
+        "description"
+      ],
+      "default": "accent"
+    }
+  }
+}

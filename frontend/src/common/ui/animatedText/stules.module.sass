@@ -1,0 +1,34 @@
+.container
+    position: relative
+    display: grid
+    grid-template-columns: 6px auto 6px
+    grid-template-rows: auto
+    position: relative
+    width: auto
+    align-items: center
+
+    &::after
+        content: ""
+        position: absolute
+        z-index: -1
+        left: -8px
+        right: -8px
+        top: -8px
+        bottom: -8px
+        border-radius: 2px
+        transform-origin: 50% 100%
+        background-color: var(--color-hover)
+        backdrop-filter: blur(4px)
+        transform: scaleY(var(--anim))
+        transition: 0.05s transform ease-in-out
+
+    &:hover
+        *
+            color: var(--color-dark)!important
+
+.animated
+    position: relative
+    grid-column: 2 / span 1
+    grid-row: 1 / span 1
+    font-kerning: none
+    white-space: nowrap

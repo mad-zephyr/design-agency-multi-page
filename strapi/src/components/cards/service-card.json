@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_cards_service_cards",
+  "info": {
+    "displayName": "ServiceCard",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.link"
+    }
+  }
+}

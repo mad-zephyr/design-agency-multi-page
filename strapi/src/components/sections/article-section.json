@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_sections_article_sections",
+  "info": {
+    "displayName": "ArticleSection",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

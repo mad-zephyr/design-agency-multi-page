@@ -1,0 +1,24 @@
+.wrapper
+    display: grid
+    grid-template-columns: 24px auto
+    grid-auto-rows: 1fr
+
+    &:hover
+        background: var(--color-light-grey)
+
+.label
+    grid-column: 2
+    font-size: 14px
+    line-height: 2
+    color: var(--mauve-11)
+
+.checked
+    grid-column: 1
+    width: 25px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+
+.separator
+    height: 1px
+    background: var(--color-light-grey)

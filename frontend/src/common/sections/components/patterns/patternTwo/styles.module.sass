@@ -1,0 +1,40 @@
+.pattern
+    position: absolute
+    display: flex
+    height: auto
+    bottom: 0
+    right: 0
+    opacity: 0.06
+    pointer-events: none
+    z-index: 0
+    left: 0
+
+.left
+    left: -6rem
+
+.center
+    left: 50%
+    transform: translateX(-50%)
+
+.right
+    right: -6rem
+
+.row
+    display: flex
+    width: 100%
+    height: auto
+    justify-content: flex-start
+
+.circle
+    aspect-ratio: 1
+    width: auto
+    height: 100%
+    min-height: 292px
+    border-radius: 100%
+    background: linear-gradient(90deg, rgba(93, 2, 2, 0) 0%, rgba(93, 2, 2, 0.5) 100%)
+
+    &:nth-of-type(1)
+        transform: rotateZ(0deg)
+
+    &:nth-of-type(2)
+        transform: rotateZ(90deg)

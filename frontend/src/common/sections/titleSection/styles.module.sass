@@ -1,0 +1,62 @@
+.section
+    position: relative
+    display: flex
+    justify-content: center
+    margin-bottom: 10rem
+    padding: 0 24px
+
+.wrapper
+    display: flex
+    max-width: 1111px
+    width: 100%
+    z-index: 1
+
+.main
+    display: flex
+    align-items: center
+    position: relative
+    min-height: 192px
+    width: 100%
+    padding: 72px 96px
+    background: var(--color-accent)
+    overflow: hidden
+    justify-content: space-between
+    border-radius: 1rem
+
+.content
+    position: relative
+    display: flex
+    flex-direction: column
+    row-gap: 24px
+    width: 100%
+    z-index: 2
+
+    h1, h2, h3, h4, p
+        color: rgba(var(--color-light))
+        width: 100%
+
+    p
+        width: 100%
+
+.center
+    h1, h2, h3, h4, p
+        text-align: center
+
+.left
+    h1, h2, h3, h4, p
+        text-align: left
+
+.right
+    h1, h2, h3, h4, p
+        text-align: right
+
+@media only screen and (max-width: 960px)
+
+@media screen and (max-width: 480px)
+    .section
+        margin-bottom: 6rem
+        padding: 0
+
+    .main
+        padding: 105px 24px
+        border-radius: 0rem

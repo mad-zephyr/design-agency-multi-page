@@ -1,0 +1,104 @@
+.wrapper
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: 1fr
+
+    position: relative
+    max-width: 1111px
+    width: 100%
+    height: 640px
+    border-radius: 16px
+    overflow: hidden
+    background: var(--color-accent)
+    align-items: center
+    z-index: 1
+
+.content
+    grid-column: 1 / span 7
+    grid-row: 1 / span 1
+    position: relative
+    display: flex
+    flex-direction: column
+    row-gap: 40px
+
+    height: fit-content
+
+    padding: 64px 64px 0
+    z-index: 2
+    color: rgba(var(--color-light))
+
+    h1, h2, h3
+        font-weight: 500
+        max-width: 500px
+        color: var(--color-light)
+
+    p
+        color: var(--color-light)
+        max-width: 450px
+
+.promo
+    position: absolute
+    right: 0
+    height: 100%
+    aspect-ratio: 1
+    width: auto
+
+.oval
+    position: absolute
+    top: 0
+    right: 0
+    aspect-ratio: 1
+    height: 100%
+    opacity: 30%
+    width: auto
+    border-radius: 100%
+    background: linear-gradient(0deg, rgba(93, 2, 2, 0) 0%, rgba(93, 2, 2, 0.5) 100%)
+
+.img
+    position: absolute
+    right: 100px
+    z-index: 1
+    border-radius: 40px
+
+.scene
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: 0
+
+@media only screen and (max-width: 960px)
+
+    .wrapper
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-template-rows: auto minmax(460px, 500px)
+        overflow: visible
+        height: auto
+
+    .content
+        grid-column: 2 / span 10
+        grid-row: 1 / span 1
+        padding: 60px 0px 0
+        row-gap: 36px
+        align-items: center
+
+        h1, h2, h3, p
+            text-align: center
+            width: 100%
+            max-width: unset
+
+    .promo
+        grid-column: 1 / span 12
+        grid-row: 1 / span 3
+        position: relative
+        right: unset
+        transform: unset
+        height: 100%
+        width: auto
+        aspect-ratio: auto
+
+        img
+            object-fit: cover
+            object-position: bottom center
