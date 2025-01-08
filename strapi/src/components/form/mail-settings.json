@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_form_mail_settings",
+  "info": {
+    "displayName": "mailSettings",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "footer": {
+      "type": "string"
+    },
+    "mailList": {
+      "displayName": "email",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.email",
+      "required": true,
+      "min": 1,
+      "max": 4
+    }
+  }
+}

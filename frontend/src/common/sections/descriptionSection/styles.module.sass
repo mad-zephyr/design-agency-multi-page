@@ -1,0 +1,78 @@
+$columns: 12
+
+.main
+    display: grid
+    grid-template-columns: repeat($columns, 1fr )
+    width: 100%
+    min-height: 480px
+    border-radius: 1rem
+    overflow: hidden
+
+.content
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+
+    grid-row: 1 / span 1
+    background: #fdf3f0
+    padding: 154px 96px
+    z-index: 2
+
+    h1,h2,h3,h4,h5,h6
+        color: var(--color-accent)
+        margin-bottom: 24px
+
+    p:not(:last-of-type)
+        margin-bottom: 24px
+
+.cover
+    position: relative
+    grid-row: 1 / span 1
+    height: 100%
+    background: var(--color-accent)
+
+    img
+        object-fit: cover
+
+.contentLeft
+    grid-column: 1 / span 7
+
+.contentRight
+    grid-column: span 7
+
+.imageLeft
+    grid-column: 1 / span 5
+
+.imageRight
+    grid-column: 8 / span 5
+
+@media only screen and (max-width: 960px)
+    .main
+        border-radius: 1rem
+        grid-template-rows: minmax(320px, 400px) auto
+
+    .content
+        grid-column: 1 / span 12
+        grid-row: 3 / span 1
+        padding: 0
+        padding: 5rem 24px
+
+    .cover
+        position: relative
+        grid-column: 1 / span 12
+        grid-row: 1 / span 2
+
+        img
+            object-fit: cover
+
+    .content
+        h1,h2,h3,h4,h5,h6,p
+            text-align: center
+
+        h1,h2,h3
+            font-size: 32px
+
+@media only screen and (max-width: 480px)
+    .main
+        border-radius: 0rem

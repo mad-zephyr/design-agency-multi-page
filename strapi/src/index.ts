@@ -14,5 +14,29 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {
+    const io = require("socket.io")(strapi.server.httpServer, {
+      cors: {
+        origin: "*", // Adjust the origin as needed
+        methods: ["GET", "POST"],
+      },
+    });
+
+    io.on("connection", (socket) => {
+      console.log("A user connected");
+
+      // Handle custom events
+      socket.on("custom-event", (data) => {
+        console.log("Received custom-event with data:", data);
+        // Emit events or handle logic as needed
+      });
+
+      socket.on("disconnect", () => {
+        console.log("A user disconnected");
+      });
+    });
+
+    // Make the io instance available globally
+    strapi.io = io;
+  },
 };

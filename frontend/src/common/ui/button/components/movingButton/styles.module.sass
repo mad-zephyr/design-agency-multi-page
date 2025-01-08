@@ -1,0 +1,84 @@
+.button
+    position: relative
+    // display: flex
+    display: grid
+    grid-template-columns: 44px minmax(56px, auto) 44px
+    grid-template-rows: 20px auto 20px
+    align-items: center
+    justify-content: center
+    background-color: #fff
+
+    transition: all .35s ease-out
+    cursor: pointer
+    border: unset
+    border-radius: 12px
+    overflow: hidden
+    min-height: 56px
+    width: fit-content
+
+    &:hover
+        background: var(--color-hover)
+
+.mask
+    grid-column: 1 / span 3
+    grid-row: 2 / span 1
+    overflow: hidden
+    position: relative
+    // border: 1px solid blue
+
+.slider
+    display: flex
+    align-items: center
+    transition: top .75s ease-out
+    animation: slide 3s linear 0s infinite
+
+    & > p
+        margin: 0
+        text-transform: uppercase
+        white-space: nowrap
+        font-size: 15px
+        font-weight: 500
+        line-height: 1
+
+        &:nth-of-type(2)
+            position: absolute!important
+            left: calc(100% + 15px)
+
+.overlay_mask
+    display: grid
+    grid-column: 1 / span 3
+    place-items: center
+    grid-row: 2 / span 1
+    grid-template-columns: 1fr
+    overflow: hidden
+    // border: 1px solid red
+
+.overlay
+    // width: max-content
+    font-weight: 600
+    font-size: 15px
+    letter-spacing: 0.07em
+    text-transform: uppercase
+    visibility: hidden
+    line-height: 1
+
+.large
+    // padding: 16px 0px
+
+    font-weight: 500
+    font-size: 15px
+    letter-spacing: 0.07em
+    text-transform: uppercase
+    color: var(--color-dark-grey)
+
+.light
+    background: var(--color-light-grey)
+    color: var(--color-dark)
+
+.dark
+    background: var(--color-accent)
+    color: rgba(var(--color-light))
+
+@keyframes slide
+    to
+        transform: translateX(calc(-100% - 15px))

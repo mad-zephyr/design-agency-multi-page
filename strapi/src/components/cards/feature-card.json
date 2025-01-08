@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_cards_feature_cards",
+  "info": {
+    "displayName": "featureCard",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    }
+  }
+}

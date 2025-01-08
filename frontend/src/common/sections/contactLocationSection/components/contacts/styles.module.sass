@@ -1,0 +1,37 @@
+
+.main
+    position: relative
+    padding: 6rem
+    overflow: hidden
+    background: var(--color-accent-light)
+    border-radius: 1rem
+
+.content
+    display: flex
+    flex-direction: column
+    width: auto
+    color: var(--color-accent)
+
+.wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 1.875rem
+    flex-grow: 1
+    color: var(--foreground)
+    margin-top: 1.5rem
+
+@media only screen and (max-width: 480px)
+    .main
+        position: relative
+        padding: 5rem 1.5rem
+        border-radius: 0rem
+
+    .content
+        justify-content: center
+
+        & > *
+            text-align: center
+
+    .wrapper
+        flex-direction: column
+        justify-content: center

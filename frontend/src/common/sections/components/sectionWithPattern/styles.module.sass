@@ -1,0 +1,21 @@
+
+.main
+    display: flex
+    align-items: center
+    position: relative
+    min-height: 192px
+    width: 100%
+    padding: 72px 96px
+    background: var(--color-accent)
+    overflow: hidden
+    justify-content: space-between
+    border-radius: 1rem
+
+    & > *:not(:last-child)
+        z-index: 2
+
+@media only screen and (max-width: 960px)
+
+@media screen and (max-width: 480px)
+    .main
+        border-radius: 0rem

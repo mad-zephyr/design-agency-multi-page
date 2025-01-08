@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_cards_preview_cards",
+  "info": {
+    "displayName": "previewCard",
+    "icon": "command",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.link"
+    }
+  }
+}

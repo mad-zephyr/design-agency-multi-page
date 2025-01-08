@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_title_sections",
+  "info": {
+    "displayName": "TitleSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "alignText": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ],
+      "default": "center",
+      "required": true
+    }
+  }
+}

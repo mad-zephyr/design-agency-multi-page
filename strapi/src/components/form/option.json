@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_form_options",
+  "info": {
+    "displayName": "option",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "field_id": {
+      "type": "string"
+    }
+  }
+}

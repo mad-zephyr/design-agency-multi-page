@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_contact_with_locations",
+  "info": {
+    "displayName": "ContactWithLocation",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "column_one": {
+      "type": "blocks"
+    },
+    "column_two": {
+      "type": "blocks"
+    },
+    "map": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.map"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.section
+    position: relative
+    display: flex
+    justify-content: center
+    margin-bottom: 10rem
+    padding: 0 24px
+
+.wrapper
+    display: flex
+    max-width: 1111px
+    width: 100%
+    z-index: 1
+
+@media only screen and (max-width: 960px)
+    .section
+        margin-bottom: 7.5rem
+
+@media screen and (max-width: 480px)
+    .section
+        margin-bottom: 6rem
+
+    .noMobilePadding
+        padding: 0
+
+    .noMobileMaginBottom
+        margin-bottom: 0rem

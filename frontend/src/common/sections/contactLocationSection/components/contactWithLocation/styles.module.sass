@@ -1,0 +1,58 @@
+.wrapper
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: 1fr
+    align-items: center
+    column-gap: 1.875rem
+    width: auto
+
+.mapLeft
+    & > div
+        &:first-of-type
+            grid-column: 1 / span 8
+
+        &:last-of-type
+            grid-column: 9 / span 4
+
+.mapRight
+    grid-auto-flow: dense
+
+    & > div
+        &:first-of-type
+            grid-column: 5 / span 9
+
+        &:last-of-type
+            grid-column: 1 / span 4
+
+@media only screen and (max-width: 960px)
+    .wrapper
+        grid-template-columns: repeat(1, 1fr)
+        grid-template-rows: minmax(300px, 326px) auto
+        gap: 24px
+
+    .mapRight, .mapLeft
+        & > div
+            &:first-of-type
+                grid-column: 1 / span 1
+                grid-row: 2 / span 1
+
+            &:last-of-type
+                grid-column: 1 / span 1
+                grid-row: 1 / span 1
+
+@media only screen and (max-width: 480px)
+    .wrapper
+        grid-template-columns: repeat(1, 1fr)
+        grid-template-rows: minmax(300px, 420px) auto
+        gap: 0
+
+    .mapRight, .mapLeft
+        & > div
+            &:first-of-type
+                grid-column: 1 / span 1
+                grid-row: 2 / span 1
+
+            &:last-of-type
+                grid-column: 1 / span 1
+                grid-row: 1 / span 1
+                margin-bottom: 0

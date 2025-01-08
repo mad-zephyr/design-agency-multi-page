@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_ui_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "light"
+    },
+    "btnType": {
+      "type": "enumeration",
+      "enum": [
+        "nav_internal",
+        "nav_external",
+        "download",
+        "submit",
+        "form"
+      ],
+      "default": "nav_internal",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "btnStyle": {
+      "type": "enumeration",
+      "enum": [
+        "moving",
+        "standard"
+      ],
+      "required": true,
+      "default": "standard"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_contact_with_modal_sections",
+  "info": {
+    "displayName": "ContactWithModalSection",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "  "
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "formInModal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form"
+    }
+  }
+}
