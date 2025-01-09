@@ -100,13 +100,10 @@ const generateSchemaBaseOnInputType = (
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const generateZodSchema = (inputs: FormField[]): z.ZodObject<any> => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const schema: Record<string, z.ZodType<any>> = {};
 
   inputs.forEach((field) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let fieldSchema: ZodType<any>;
 
     switch (field.component) {

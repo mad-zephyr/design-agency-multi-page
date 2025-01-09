@@ -1,6 +1,5 @@
 import { Locale } from '@/i18n/config';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const dictionaries: Record<Locale, any> = {
   en: () => import('./en.json').then((r) => r.default),
   de: () => import('./de.json').then((r) => r.default),
