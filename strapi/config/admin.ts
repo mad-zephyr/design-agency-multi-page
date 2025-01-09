@@ -10,6 +10,7 @@ export default ({ env }) => ({
       salt: env("TRANSFER_TOKEN_SALT"),
     },
   },
+  url: "/strapi/admin",
   flags: {
     nps: env.bool("FLAG_NPS", false),
     promoteEE: env.bool("FLAG_PROMOTE_EE", false),
