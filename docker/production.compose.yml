@@ -37,6 +37,24 @@ services:
         API_CONTAINER_URL: ${API_CONTAINER_URL}
         API_CLIENT_URL: ${API_CLIENT_URL}
         API_TOKEN: ${API_TOKEN_PRODUCTION}
+
+       args:
+        API_CONTAINER_URL: ${API_CONTAINER_URL}
+        API_CLIENT_URL: ${API_CLIENT_URL}
+        NEXT_API_PROD: ${NEXT_API_PROD}
+        NEXT_PUBLIC_API_PROD: ${NEXT_PUBLIC_API_PROD}
+        API_TOKEN: ${API_TOKEN_PRODUCTION}
+        NEXT_PUBLIC_MAPBOX_API_TOKEN: ${NEXT_PUBLIC_MAPBOX_API_TOKEN}
+        NODE_ENV: ${NODE_ENV}
+
+    environment:
+      # Передача переменных окружения на этапе выполнения
+      NEXT_API_PROD: ${NEXT_API_PROD}
+      NEXT_PUBLIC_API_PROD: ${NEXT_PUBLIC_API_PROD}
+      API_TOKEN: ${API_TOKEN_PRODUCTION}
+      NEXT_PUBLIC_MAPBOX_API_TOKEN: ${NEXT_PUBLIC_MAPBOX_API_TOKEN}
+      NODE_ENV: ${NODE_ENV}
+
     volumes:
       - ../frontend/public:/frontend/public
       - ../frontend/src:/frontend/src
