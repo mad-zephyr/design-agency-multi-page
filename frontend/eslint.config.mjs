@@ -53,7 +53,7 @@ export default [
           endOfLine: 'auto',
         },
       ],
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
       'react/react-in-jsx-scope': 'off',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
