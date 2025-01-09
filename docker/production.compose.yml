@@ -31,7 +31,7 @@ services:
 
   frontend:
     build:
-      context: ../front
+      context: ../frontend
       dockerfile: ../docker/production/Dockerfile.frontend
       args:
         API_CONTAINER_URL: ${API_CONTAINER_URL}
