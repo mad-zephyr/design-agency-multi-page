@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "graphqltypes": "graphql-codegen --config codegen.ts",
-    "postinstall": "patch-package",
-    "prepare": "patch-package"
+    "graphqltypes": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.12.4",
