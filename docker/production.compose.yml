@@ -52,8 +52,6 @@ services:
       dockerfile: ../docker/production/Dockerfile.strapi
       args:
         API_CLIENT_URL: ${API_CLIENT_URL}
-    ports:
-      - "1337:1337"
     environment:
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
