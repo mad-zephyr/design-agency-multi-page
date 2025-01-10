@@ -2422,6 +2422,78 @@ export type GetPageQueryQuery = {
   } | null>;
 };
 
+export type GetPageSeoQueryQueryVariables = Exact<{
+  locale: Scalars['I18NLocaleCode']['input'];
+  url: Scalars['String']['input'];
+}>;
+
+export type GetPageSeoQueryQuery = {
+  __typename?: 'Query';
+  pages: Array<{
+    __typename: 'Page';
+    seo?: {
+      __typename: 'ComponentSharedSeo';
+      id: string;
+      metaTitle: string;
+      metaDescription: string;
+      keywords?: string | null;
+      canonicalURL?: string | null;
+      metaViewport?: string | null;
+      structuredData?: any | null;
+      metaImage?: {
+        __typename: 'UploadFile';
+        documentId: string;
+        name: string;
+        alternativeText?: string | null;
+        caption?: string | null;
+        width?: number | null;
+        height?: number | null;
+        formats?: any | null;
+        hash: string;
+        ext?: string | null;
+        mime: string;
+        size: number;
+        url: string;
+        previewUrl?: string | null;
+        provider: string;
+        provider_metadata?: any | null;
+        createdAt?: any | null;
+        updatedAt?: any | null;
+        publishedAt?: any | null;
+      } | null;
+      openGraph?: {
+        __typename: 'ComponentSharedOpenGraph';
+        id: string;
+        og_title: string;
+        og_description: string;
+        og_type?: string | null;
+        og_url?: string | null;
+        og_image?: {
+          __typename: 'UploadFile';
+          documentId: string;
+          name: string;
+          alternativeText?: string | null;
+          caption?: string | null;
+          width?: number | null;
+          height?: number | null;
+          formats?: any | null;
+          hash: string;
+          ext?: string | null;
+          mime: string;
+          size: number;
+          url: string;
+          previewUrl?: string | null;
+          provider: string;
+          provider_metadata?: any | null;
+          createdAt?: any | null;
+          updatedAt?: any | null;
+          publishedAt?: any | null;
+        } | null;
+      } | null;
+    } | null;
+  } | null>;
+};
+
 export type GetTechniclaQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 }>;
