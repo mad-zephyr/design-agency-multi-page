@@ -28,7 +28,7 @@ ENV API_TOKEN=${API_TOKEN}
 ENV NEXT_PUBLIC_MAPBOX_API_TOKEN=${NEXT_PUBLIC_MAPBOX_API_TOKEN}
 
 # Сборка приложения и очистка кэша
-RUN npm run build && npm cache clean --force && npm prune --omit=dev
+RUN npm run build && npm cache clean --force && npm prune --omit=dev --legacy-peer-deps
 
 
 EXPOSE 3000
