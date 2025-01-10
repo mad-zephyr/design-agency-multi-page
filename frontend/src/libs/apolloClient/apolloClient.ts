@@ -10,7 +10,7 @@ import { getBasePath } from '../helpers';
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   const basePath = getBasePath();
 
-  const inMemoryConfig: InMemoryCacheConfig = {};
+  const inMemoryConfig: InMemoryCacheConfig = { resultCaching: false };
   const cache = new InMemoryCache(inMemoryConfig);
 
   // const fethCache: RequestCache = 'reload';
