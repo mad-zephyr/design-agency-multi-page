@@ -31,7 +31,12 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: cache,
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: 'network-only',
+        fetchPolicy: 'no-cache',
+        errorPolicy: 'ignore',
+      },
+      query: {
+        fetchPolicy: 'no-cache',
+        errorPolicy: 'all',
       },
     },
     link,
