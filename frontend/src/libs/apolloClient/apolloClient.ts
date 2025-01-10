@@ -14,36 +14,11 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
 
   const link = new HttpLink({
     uri: `${basePath}/graphql`,
-    headers: {
-      'Cache-Control': 'no-cache',
-    },
-    fetchOptions: { revalidate: 30 },
-    // fetch: function (uri, options) {
-    //   return fetch(uri, {
-    //     ...(options ?? {}),
-    //     headers: {
-    //       ...(options?.headers ?? {}),
-    //       Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-    //     },
-    //     next: {
-    //       revalidate: 0,
-    //     },
-    //   });
-    // },
+    fetchOptions: { cache: 'no-store' },
   });
 
   return new ApolloClient({
     cache: cache,
-    defaultOptions: {
-      watchQuery: {
-        fetchPolicy: 'no-cache',
-        errorPolicy: 'ignore',
-      },
-      query: {
-        fetchPolicy: 'no-cache',
-        errorPolicy: 'all',
-      },
-    },
     link,
   });
 });
