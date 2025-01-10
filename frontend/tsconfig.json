@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "next.config.mjs",
     "src/common/modules/header/components/langSwitcher"
-  ],
+, "src/libs/apolloClient/VoidCache.ts"  ],
   "exclude": ["node_modules"]
 }
