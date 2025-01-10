@@ -21,15 +21,15 @@ export async function generateMetadata({ params }: THome): Promise<Metadata> {
   try {
     const { data } = await getClient().query<{
       pages: Page[];
-      url: '/';
     }>({
       query: GetPageSeo,
       variables: {
         locale: locale,
+        url: '/',
       },
     });
 
-    return await generateSeo(data?.pages?.[0].seo);
+    return await generateSeo(data.pages[0].seo, locale);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return await generateSeo();

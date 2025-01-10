@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 import { uiUploadfile } from '@/common/models';
-import { routing } from '@/i18n/routing';
+import { Locale, routing } from '@/i18n/routing';
 import { ComponentSharedSeo, Maybe } from '@/types/types';
 
 import { getBasePath } from './getBasePath';
@@ -14,10 +14,12 @@ const baseSeo = {
   canonicalURL: 'designo.nx.md',
   imgAltText: 'alternativeText',
   type: 'website',
+  siteName: 'designo.nx.md',
 };
 
 export const generateSeo = async (
-  seo?: Maybe<ComponentSharedSeo>
+  seo?: Maybe<ComponentSharedSeo>,
+  locale?: Locale
 ): Promise<Metadata> => {
   if (!seo) {
     return {
@@ -45,16 +47,18 @@ export const generateSeo = async (
       title: seo.metaTitle,
       description: seo.metaDescription,
       url: seo.canonicalURL || baseSeo.canonicalURL,
+      siteName: baseSeo.siteName,
       images: image
         ? [
             {
-              url: image?.formats?.large?.url || image.url,
+              url: image.url,
               width: 1200,
               height: 630,
               alt: image.alternativeText || baseSeo.imgAltText,
             },
           ]
         : [],
+      locale: locale,
       type: 'website',
     },
     twitter: {
@@ -64,7 +68,7 @@ export const generateSeo = async (
       images: image
         ? [
             {
-              url: image?.formats?.large?.url || image.url,
+              url: image.url,
               width: 1200,
               height: 630,
               alt: image.alternativeText || baseSeo.imgAltText,
