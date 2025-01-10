@@ -1,4 +1,6 @@
-export default () => ({
+const MAX_AGE = 60;
+
+export default ({ env }) => ({
   graphql: {
     config: {
       endpoint: "/graphql",
@@ -7,7 +9,10 @@ export default () => ({
       depthLimit: 7,
       amountLimit: 100,
       apolloServer: {
-        tracing: false,
+        tracing: "production" !== env("NODE_ENV") ? true : false,
+        introspection: true,
+        persistedQueries: { ttl: 10 * MAX_AGE },
+        cacheControl: { defaultMaxAge: MAX_AGE },
       },
     },
   },
