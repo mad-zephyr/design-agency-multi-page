@@ -13,7 +13,7 @@
     grid-template-columns: 1px repeat(2, auto) 1px
     grid-template-rows: 64px repeat(2, auto) 64px auto
     max-width: 1111px
-    width: 100%
+    width: calc(100% - 48px)
     z-index: 3
     margin: 0 auto
     transition: 0.3s all ease-in-out
@@ -57,13 +57,12 @@
 
 .minimized
     grid-template-rows: 16px repeat(2, auto) 16px auto
-    grid-template-columns: 24px repeat(2, auto) 24px
+    grid-template-columns: 0px repeat(2, auto) 0px
     transition: all 0.3s ease-in-out
-    background: rgba(white,0.3)
+    background: rgba(white, 0.3)
     backdrop-filter: blur(14px)
 
     .nav
-        // grid-column: 3 / span 1
         padding-right: 3rem
 
 .menu
@@ -74,12 +73,14 @@
 
 @media screen and (max-width: 960px)
     .header
-        background: rgba(#fff, 0)
+        height: 96px
+        background: rgba(#fff, 1)
 
     .wrapper
         display: grid
+        grid-template-rows: 24px repeat(2, auto) 24px auto
         grid-template-columns: 24px repeat(2, auto) 24px
-        grid-template-rows: 16px repeat(2, auto) 16px auto
+        width: 100%
 
     .logo
         grid-column: 2 / span 1
@@ -99,9 +100,12 @@
         grid-column: 1 / span 4
         grid-row: 5 / span 1
 
+    .minimized
+        grid-template-rows: 16px repeat(2, auto) 16px auto
+        // grid-template-columns: 24px repeat(2, auto) 24px
+
 @media screen and (max-width: 480px)
     .header
-        height: 96px
         display: flex
         align-items: center
         background: rgba(#fff, 0)

@@ -53,5 +53,5 @@ export default async function FirstLevelPage(props: FirstLevelPage) {
 
   const page = getUiPageSections(data.pages[0]);
 
-  return <main>{page.sections}</main>;
+  return <>{page.sections}</>;
 }

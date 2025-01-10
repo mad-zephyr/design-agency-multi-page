@@ -8,8 +8,14 @@
     justify-content: center
     align-items: center
     cursor: pointer
-
     background: var(--color-accent-light)
+
+    &:hover
+        .content
+            background: var(--color-hover)
+
+            & > *
+                color: black
 
 .title
     color: var(--color-accent)

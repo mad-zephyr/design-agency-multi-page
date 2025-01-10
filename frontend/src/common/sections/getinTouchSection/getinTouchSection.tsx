@@ -1,6 +1,7 @@
 'use client';
 
 import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
+import cn from 'classnames';
 import { FC, useState } from 'react';
 
 import { FormWrapper } from '@/common/forms';
@@ -35,8 +36,10 @@ export const GetinTouchSection: FC<TGetinTouchSection> = ({
     setIsModalOpen((prevState) => !prevState);
   };
 
+  const mainClass = cn(styles.section, styles.margintTop480);
+
   return (
-    <section className={styles.section}>
+    <section className={mainClass}>
       <div className={styles.wrapper}>
         <div className={styles.main}>
           <div className={styles.content}>

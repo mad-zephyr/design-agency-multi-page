@@ -22,17 +22,19 @@ export const Section: FC<PropsWithChildren<TSection>> = ({
   decor,
   noPaddingFor,
   noMarginBottomFor,
+  className,
+  style,
   ...props
 }) => {
   const decorPosition = calculateDecorPosition(decor?.posX, decor?.posY);
 
-  const mainClass = cn(styles.section, {
+  const mainClass = cn(styles.section, className, {
     [styles.noMobilePadding]: noPaddingFor === '480px',
     [styles.noMobileMaginBottom]: noMarginBottomFor === '480px',
   });
 
   return (
-    <section className={mainClass} {...props}>
+    <section className={mainClass} style={style} {...props}>
       <div className={styles.wrapper}>{children}</div>
       {decorPosition && (
         <Decor posX={decorPosition.posX} posY={decorPosition.posY} />
