@@ -46,6 +46,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: '192.168.8.104',
       },
+      {
+        protocol: 'https',
+        hostname: 'designo.nx.md',
+      },
     ],
   },
 };
