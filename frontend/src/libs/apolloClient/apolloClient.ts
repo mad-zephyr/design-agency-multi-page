@@ -13,7 +13,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   const inMemoryConfig: InMemoryCacheConfig = {};
   const cache = new InMemoryCache(inMemoryConfig);
 
-  const fethCache: RequestCache = 'reload';
+  // const fethCache: RequestCache = 'reload';
 
   const link = new HttpLink({
     // this needs to be an absolute url, as relative urls cannot be used in SSR
@@ -21,7 +21,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     headers: {
       'Cache-Control': 'no-cache',
     },
-    fetchOptions: { cache: fethCache },
+    // fetchOptions: { cache: fethCache },
 
     // you can disable result caching here if you want to
     // (this does not work if you are rendering your page with `export const dynamic = "force-static"`)
