@@ -10,7 +10,7 @@ import { getBasePath } from '../helpers';
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   const basePath = getBasePath();
 
-  const cache = new InMemoryCache({ resultCaching: false });
+  const cache = new InMemoryCache();
 
   const link = new HttpLink({
     uri: `${basePath}/graphql`,
