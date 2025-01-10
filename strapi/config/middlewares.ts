@@ -18,7 +18,11 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:3000", "http://frontend:3000"], // Разрешаем ваш клиентский сайт
+      origin: [
+        "http://localhost:3000",
+        "http://frontend:3000",
+        "https://designx.netlify.app",
+      ], // Разрешаем ваш клиентский сайт
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: ["Content-Type", "Authorization", "x-api-key"], // Добавьте все заголовки, которые вам нужны
     },
