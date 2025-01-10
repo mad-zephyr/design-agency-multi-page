@@ -29,6 +29,8 @@ export const generateSeo = async (
   }
 
   const image = uiUploadfile(seo.metaImage);
+  const ogImage = uiUploadfile(seo.openGraph?.og_image);
+
   const basePath = getBasePath() || '';
   const languages = routing.locales.reduce((langArr, lang) => {
     return {
@@ -44,17 +46,17 @@ export const generateSeo = async (
     robots: seo.metaRobots || baseSeo.robots,
 
     openGraph: {
-      title: seo.metaTitle,
-      description: seo.metaDescription,
-      url: seo.canonicalURL || baseSeo.canonicalURL,
+      title: seo.openGraph?.og_title || seo.metaTitle,
+      description: seo.openGraph?.og_description || seo.metaDescription,
+      url: seo.openGraph?.og_url || seo.canonicalURL || baseSeo.canonicalURL,
       siteName: baseSeo.siteName,
-      images: image
+      images: ogImage
         ? [
             {
-              url: image.url,
+              url: ogImage.url,
               width: 1200,
               height: 630,
-              alt: image.alternativeText || baseSeo.imgAltText,
+              alt: ogImage.alternativeText || baseSeo.imgAltText,
             },
           ]
         : [],
@@ -63,8 +65,8 @@ export const generateSeo = async (
     },
     twitter: {
       card: 'summary_large_image',
-      title: seo.metaTitle || baseSeo.title,
-      description: seo.metaDescription || baseSeo.descr,
+      title: seo.openGraph?.og_title || seo.metaTitle,
+      description: seo.openGraph?.og_description || seo.metaDescription,
       images: image
         ? [
             {
@@ -75,11 +77,6 @@ export const generateSeo = async (
             },
           ]
         : [],
-      // images: seo.openGraph?.og_type ===
-      //   ?.filter((social) => social?.socialNetwork === 'Twitter')
-      //   ?.map((social) => ({
-      //     url: uiUploadfile(social?.image).url,
-      //   })),
     },
     alternates: {
       canonical: basePath,
