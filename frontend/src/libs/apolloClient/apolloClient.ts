@@ -1,4 +1,4 @@
-import { HttpLink, InMemoryCacheConfig } from '@apollo/client';
+import { HttpLink } from '@apollo/client';
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,8 +10,7 @@ import { getBasePath } from '../helpers';
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   const basePath = getBasePath();
 
-  const inMemoryConfig: InMemoryCacheConfig = { resultCaching: false };
-  const cache = new InMemoryCache(inMemoryConfig);
+  const cache = new InMemoryCache({ resultCaching: false });
 
   // const fethCache: RequestCache = 'reload';
 
@@ -32,7 +31,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     cache: cache,
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'network-only',
       },
     },
     link,
