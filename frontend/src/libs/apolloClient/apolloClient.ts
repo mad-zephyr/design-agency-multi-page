@@ -17,19 +17,19 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     headers: {
       'Cache-Control': 'no-cache',
     },
-    // fetchOptions: { cache: 'no-store' },
-    fetch: function (uri, options) {
-      return fetch(uri, {
-        ...(options ?? {}),
-        headers: {
-          ...(options?.headers ?? {}),
-          Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
-        },
-        next: {
-          revalidate: 0,
-        },
-      });
-    },
+    fetchOptions: { revalidate: 30 },
+    // fetch: function (uri, options) {
+    //   return fetch(uri, {
+    //     ...(options ?? {}),
+    //     headers: {
+    //       ...(options?.headers ?? {}),
+    //       Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+    //     },
+    //     next: {
+    //       revalidate: 0,
+    //     },
+    //   });
+    // },
   });
 
   return new ApolloClient({
