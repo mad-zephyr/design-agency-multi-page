@@ -28,12 +28,10 @@ ENV API_TOKEN=${API_TOKEN}
 ENV NEXT_PUBLIC_MAPBOX_API_TOKEN=${NEXT_PUBLIC_MAPBOX_API_TOKEN}
 
 # Сборка приложения и очистка кэша
-# RUN npm run build && npm cache clean --force
-RUN npm run build
-RUN npm prune --production
+RUN npm run build && npm cache clean --force && npm prune --omit=dev
+
 
 EXPOSE 3000
 
 # Запуск через pm2
-# CMD ["pm2-runtime", "start", "npm", "--", "start"]
-CMD ["pm2-runtime", "npm", "--", "start"]
+CMD ["pm2-runtime", "start", "npm", "--", "start"] 

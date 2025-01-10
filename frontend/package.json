@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "graphqltypes": "graphql-codegen --config codegen.ts"
+    "graphqltypes": "graphql-codegen --config codegen.ts",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@apollo/client": "^3.12.4",
@@ -51,6 +52,9 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "sass": "^1.80.7",
     "typescript": "^5"
   }
