@@ -24,6 +24,7 @@ export const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & TButton> = ({
 
     return (
       <Link
+        aria-label={title}
         href={url}
         className={mainClass}
         target={btnType === 'nav_external' ? '_blank' : undefined}

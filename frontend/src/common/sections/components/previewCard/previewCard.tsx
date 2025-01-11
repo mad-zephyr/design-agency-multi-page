@@ -25,7 +25,12 @@ export const PreviewCard: FC<TPreviewCard> = ({
   title,
 }) => {
   return (
-    <Link href={link} role="link" className={styles.main}>
+    <Link
+      aria-label={title || ''}
+      href={link}
+      role="link"
+      className={styles.main}
+    >
       <div className={styles.card}>
         {image && (
           <Image

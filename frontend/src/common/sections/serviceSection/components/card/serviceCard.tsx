@@ -17,7 +17,11 @@ export type TServiceCard = {
 
 export const ServiceCard: FC<TServiceCard> = ({ image, link, title }) => {
   return (
-    <Link href={link?.url || '/'} className={styles.card}>
+    <Link
+      aria-label={title || ''}
+      href={link?.url || '/'}
+      className={styles.card}
+    >
       {title && <Htag type="h2" content={title} />}
       {link && (
         <div className={styles.link}>

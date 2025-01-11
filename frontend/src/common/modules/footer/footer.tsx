@@ -36,13 +36,14 @@ export const Footer: FC<TFooterData> = ({ data }) => {
     >
       <div className={styles.content}>
         <div className={styles.first}>
-          <Link href={'/'} className={styles.logo}>
+          <Link href={'/'} aria-label="Main page" className={styles.logo}>
             <Logo />
           </Link>
           <ul className={styles.nav}>
             {links.map((link, i) => (
               <li key={i}>
                 <Link
+                  aria-label={link.title}
                   href={link.url}
                   target={link.isExternal ? '_blank' : '_self'}
                 >

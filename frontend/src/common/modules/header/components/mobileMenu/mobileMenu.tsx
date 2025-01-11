@@ -30,6 +30,7 @@ export const MobileMenu: FC<TMobileMenu> = ({ links, onClose, isOpen }) => {
           {links.map((link, i) => (
             <li key={i}>
               <Link
+                aria-label={'mobile opener'}
                 href={link.url}
                 target={link.isExternal ? '_blank' : '_self'}
               >

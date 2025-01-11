@@ -22,7 +22,11 @@ export const Social: FC<TSocialData> = ({ links }) => {
       {links.map((link, i) => (
         <Magnetic key={i}>
           <li>
-            <Link href={link.url} target={'_blank'}>
+            <Link
+              aria-label={link.image?.alternativeText || 'Social media'}
+              href={link.url}
+              target={'_blank'}
+            >
               {link.image && (
                 <Image
                   src={link.image.url}

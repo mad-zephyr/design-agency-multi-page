@@ -52,7 +52,7 @@ export const Header: FC<THeaderData> = ({ links }) => {
           [styles.open]: isMenuOpen,
         })}
       >
-        <Link href={'/'} className={styles.logo}>
+        <Link href={'/'} aria-label={'Main page'} className={styles.logo}>
           <Logo />
         </Link>
         <nav className={styles.nav}>
@@ -60,6 +60,7 @@ export const Header: FC<THeaderData> = ({ links }) => {
             {links.map((link, i) => (
               <li key={i}>
                 <Link
+                  aria-label={link.title}
                   href={link.url}
                   target={link.isExternal ? '_blank' : '_self'}
                 >

@@ -40,6 +40,7 @@ export const LangSwitcher = () => {
       {languageOptions.map((option, i) => (
         <div key={i}>
           <Link
+            aria-label={option.title}
             href={pathname}
             locale={option.key}
             className={styles.wrapper}
