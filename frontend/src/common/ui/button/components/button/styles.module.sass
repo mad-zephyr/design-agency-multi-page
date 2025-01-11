@@ -12,15 +12,11 @@
     width: fit-content
     overflow: hidden
 
-    span
-        pointer-events: none
-        transition: all .6s cubic-bezier(.33,1,.68,1)
-
     &:hover
         // background: var(--color-hover)
         color: var(--color-light)
 
-        span
+        .title
             transform: translateY(-40px)
 
         .internal
@@ -32,6 +28,10 @@
             .overlay
                 top: 0%
                 border-radius: 8px
+
+.title
+    pointer-events: none
+    transition: all .6s cubic-bezier(.33,1,.68,1)
 
 .large
     padding: 16px 24px

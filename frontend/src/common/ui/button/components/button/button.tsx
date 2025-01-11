@@ -31,11 +31,11 @@ export const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & TButton> = ({
         rel={btnType === 'nav_external' ? 'noopener noreferrer' : undefined}
         {...linkRest}
       >
-        <span>{title}</span>
-        <div className={styles.internal}>
+        <span className={styles.title}>{title}</span>
+        <span className={styles.internal}>
           <p>{title}</p>
-          <div className={styles.overlay} />
-        </div>
+          <span className={styles.overlay} />
+        </span>
       </Link>
     );
   }
@@ -55,11 +55,11 @@ export const Button: FC<ButtonHTMLAttributes<HTMLButtonElement> & TButton> = ({
 
   return (
     <button className={mainClass} onClick={handleClick} {...linkRest}>
-      <span>{title}</span>
-      <div className={styles.internal}>
+      <span className={styles.title}>{title}</span>
+      <span className={styles.internal}>
         <p>{title}</p>
-        <div className={styles.overlay} />
-      </div>
+        <span className={styles.overlay} />
+      </span>
     </button>
   );
 };
